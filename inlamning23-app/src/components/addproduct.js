@@ -25,7 +25,7 @@ class AddProductPage extends React.Component {
         </div> )
   }
         
-      handleAddProduct(event){
+    handleAddProduct(event){
     this.props.dispatch(actionAddProduct({name: this.state.name, price: this.state.price, image: ""}))
   }
         

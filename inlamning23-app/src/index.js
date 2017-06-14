@@ -17,7 +17,7 @@ let initialState = {
     products: [
         {
             name: "katt",
-            image: <img src="https://media.fabfab.net/images/products/small/81_1172_002.jpg"/>,
+            image: <img src="http://veterinaren.nu/uploads/images/users/thumbs/54cb8c2ae7754.png"/>,
             price: 49
         },
         {
@@ -27,7 +27,7 @@ let initialState = {
         },
         {
             name: "kanin",
-            image: <img src="https://68.media.tumblr.com/avatar_d716b765ecac_128.png"/>,
+            image: <img src="https://pbs.twimg.com/profile_images/867133348141027328/OzKePdT3_normal.jpg"/>,
             price: 649
         }
     ]
