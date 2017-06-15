@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {actionAddProduct} from "../actions/actions.js";
+import {actionAddProduct, actionHistory} from "../actions/actions.js";
 import {connect} from "react-redux";
 
 
@@ -26,14 +26,15 @@ class AddProductPage extends Component {
         </div> )
   }
         
-    handleAddProduct(event){
+    handleAddProduct(addNewProduct){
         console.log("när man klickar", this.state.price);
-    this.props.dispatch(
-        actionAddProduct({
+         let action = actionAddProduct({
             name: this.state.name, 
             price: this.state.price, 
             image: this.state.image })
-    );
+        console.log("actionAddToBasket", action);
+          this.props.dispatch(action);
+		this.props.dispatch( actionHistory(action) );
   }
         
     handleChangeName(event){
@@ -43,7 +44,7 @@ class AddProductPage extends Component {
     }
     handleChangePrice(event){
         this.setState({
-            price: event.target.value
+            price: Number(event.target.value)
         })
     }
     handleChangeImage(event){
@@ -56,7 +57,8 @@ class AddProductPage extends Component {
         console.log("actionAddProduct");
           this.props.dispatch(action);
 		this.props.dispatch( actionHistory(action) );
-	}*/       
+	}*/  
+   
 }
 
 

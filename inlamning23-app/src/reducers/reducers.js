@@ -1,4 +1,4 @@
-import { CHANGE_TAB, ADD_NUMBER, HISTORY, ADD_PRODUCT, ADD_PRODUCT_TO_BASKET} from '../actions/actions.js';
+import { CHANGE_TAB, ADD_NUMBER, HISTORY, ADD_PRODUCT, ADD_PRODUCT_TO_BASKET, REMOVE_PRODUCT_FROM_BASKET} from '../actions/actions.js';
 
 
 function tabReducer(state = 1, action) {
@@ -40,9 +40,20 @@ function productReducer(state = [], action) {
 }
 
 function basketReducer(state = [], action) {
+    function productsAreEqual(p1,p2){
+        if (p1.name === p2.name && p2.price === p2.price && p2.image === p2.image){
+            return true;
+        } else{
+               return false; 
+        }
+     
+        
+    }
 	switch( action.type ) {
 		case ADD_PRODUCT_TO_BASKET:
 			return [...state, action.product];
+        case REMOVE_PRODUCT_FROM_BASKET:
+			return state.filter(product => !productsAreEqual(product, action.product));
 		default:
 			return state;
 	}

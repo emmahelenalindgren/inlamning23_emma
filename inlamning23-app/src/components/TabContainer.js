@@ -16,11 +16,7 @@ class TabComponent extends Component {
         this.handleClickAdd = this.handleClickAdd.bind(this);
 		this.handleClickHistory = this.handleClickHistory.bind(this);
         this.handleClickPicture = this.handleClickPicture.bind(this);
-        this.handleClickAddNumber = this.handleClickAddNumber.bind(this);
-        this.handleClickNumbers = this.handleClickNumbers.bind(this);
         this.handleClickBasket = this.handleClickBasket.bind(this);
-       
-
 	}
 	render() {
 		let view;
@@ -31,13 +27,9 @@ class TabComponent extends Component {
 			view = <Basket basket={this.props.basket} />;
 		} else if ( this.props.tab === 3 ) {
 			view = <AddProductPage handleAddProduct={this.handleAddProductToList} />;
-		} else if ( this.props.tab === 4 ) {
+		} else  {
 			view = <History history={this.props.history}/>;
-		} else if (this.props.tab === 5 ) {
-            view = <ListView items={this.props.numbers} />;
-        } else {
-			view = <Picture image={this.props.imageUrl} />;
-		}
+		} 
 		return (
 			<div className="App">
 			<div className="tabheader">
@@ -45,15 +37,11 @@ class TabComponent extends Component {
 				<button onClick={this.handleClickBasket}>Kundvagn</button>
                 <button onClick={this.handleClickAdd}>Lägg till</button>
 				<button onClick={this.handleClickHistory}>Historik</button>
-                <button onClick={this.handleClickNumbers}>tal</button>
-                <button onClick={this.handleClickPicture}>bild</button>
 			</div>
 			<div className="tabbody">
 				{view}
 			</div>
-            <div>
-				<button onClick={this.handleClickAddNumber}>Lägg till tal</button>
-			</div>
+        
 		  </div>
 		);
 	}
@@ -65,8 +53,10 @@ class TabComponent extends Component {
         console.log("actionAddNumber");
           this.props.dispatch(action);
 		this.props.dispatch( actionHistory(action) );
-	}    
+	}   
     
+     
+     
     	handleClickProducts(e) {
 		this.changeTab(1);
         console.log("actionchangetab");
