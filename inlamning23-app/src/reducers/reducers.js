@@ -1,4 +1,4 @@
-import { CHANGE_TAB, ADD_NUMBER, HISTORY, ADD_PRODUCT} from '../actions/actions.js';
+import { CHANGE_TAB, ADD_NUMBER, HISTORY, ADD_PRODUCT, ADD_PRODUCT_TO_BASKET} from '../actions/actions.js';
 
 
 function tabReducer(state = 1, action) {
@@ -31,15 +31,23 @@ function historyReducer(state = [], action) {
 } 
 
 function productReducer(state = [], action) {
-	/*switch( action.type ) {
+	switch( action.type ) {
 		case ADD_PRODUCT:
 			return [...state, action.product];
 		default:
 			return state;
-	}*/
-    return state;
+	}
+}
+
+function basketReducer(state = [], action) {
+	switch( action.type ) {
+		case ADD_PRODUCT_TO_BASKET:
+			return [...state, action.product];
+		default:
+			return state;
+	}
 }
 
 
 
-export {tabReducer, numbersReducer, pictureReducer, historyReducer, productReducer};
+export {tabReducer, numbersReducer, basketReducer, pictureReducer, historyReducer, productReducer};

@@ -1,8 +1,8 @@
 const CHANGE_TAB = 'CHANGE_TAB';
-const ADD_TO_BASKET = 'ADD_TO_BASKET';
 const ADD_PRODUCT = 'ADD_PRODUCT';
 const HISTORY = 'HISTORY';
 const ADD_NUMBER = 'ADD_NUMBER';
+const ADD_PRODUCT_TO_BASKET = "ADD_PRODUCT_TO_BASKET";
 
 function actionChangeTab(selectedTab) {
 	return {
@@ -11,12 +11,14 @@ function actionChangeTab(selectedTab) {
 	}
 }
 
-function actionAddToBasket(selectedProduct) {
+
+function actionAddToBasket (addToBasket) {
 	return {
-		type: ADD_TO_BASKET,
-		product: selectedProduct
+		type: ADD_PRODUCT_TO_BASKET,
+		product: addToBasket
 	}
 }
+
 
 function actionAddProduct(addProduct) {
 	return {
@@ -24,6 +26,7 @@ function actionAddProduct(addProduct) {
 		product: addProduct
 	}
 }
+
 
 function actionHistory(action) {
 	return {
@@ -41,5 +44,4 @@ function actionAddNumber(x) {
 }
 
 
-
-export { HISTORY, ADD_PRODUCT, ADD_TO_BASKET, CHANGE_TAB,  ADD_NUMBER, actionAddNumber, actionChangeTab, actionAddToBasket, actionAddProduct, actionHistory };
+export { HISTORY, ADD_PRODUCT_TO_BASKET, ADD_PRODUCT, CHANGE_TAB,  ADD_NUMBER, actionAddToBasket, actionAddNumber, actionChangeTab, actionAddProduct, actionHistory };

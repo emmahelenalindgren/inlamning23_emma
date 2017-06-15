@@ -5,7 +5,7 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux'; 
-import {tabReducer, numbersReducer, pictureReducer, historyReducer, productReducer, imageReducer, priceReducer } from './reducers/reducers.js';
+import {tabReducer, numbersReducer, pictureReducer, historyReducer, productReducer, imageReducer, priceReducer, basketReducer } from './reducers/reducers.js';
 
 
 
@@ -17,20 +17,21 @@ let initialState = {
     products: [
         {
             name: "katt",
-            image: <img src="http://veterinaren.nu/uploads/images/users/thumbs/54cb8c2ae7754.png"/>,
+            image: "http://veterinaren.nu/uploads/images/users/thumbs/54cb8c2ae7754.png",
             price: 49
         },
         {
             name: "Hund",
-            image: <img src="https://lh6.googleusercontent.com/-TypA1_RPKUc/AAAAAAAAAAI/AAAAAAAAAEs/prA_5TO5iEc/photo.jpg?sz=50"/>,
+            image: "https://lh6.googleusercontent.com/-TypA1_RPKUc/AAAAAAAAAAI/AAAAAAAAAEs/prA_5TO5iEc/photo.jpg?sz=50",
             price: 349
         },
         {
             name: "kanin",
-            image: <img src="https://pbs.twimg.com/profile_images/867133348141027328/OzKePdT3_normal.jpg"/>,
+            image: "https://pbs.twimg.com/profile_images/867133348141027328/OzKePdT3_normal.jpg",
             price: 649
         }
-    ]
+    ],
+    basket: []
 }
 
 
@@ -39,7 +40,8 @@ let rootReducer = combineReducers({
 	numbers: numbersReducer,
 	imageUrl: pictureReducer,
     history: historyReducer,
-    products: productReducer
+    products: productReducer,
+    basket: basketReducer
 });
 
 const store = createStore(rootReducer, initialState);

@@ -1,9 +1,9 @@
-import React from "react";
+import React, {Component} from "react";
 import {actionAddProduct} from "../actions/actions.js";
 import {connect} from "react-redux";
 
 
-class AddProductPage extends React.Component {
+class AddProductPage extends Component {
     constructor(props) {
 		super(props);
 		this.state = {
@@ -14,6 +14,7 @@ class AddProductPage extends React.Component {
 		this.handleChangeName = this.handleChangeName.bind(this);
 		this.handleChangePrice = this.handleChangePrice.bind(this);
         this.handleChangeImage = this.handleChangeImage.bind(this);
+        this.handleAddProduct = this.handleAddProduct.bind(this);
     }
   render() {
     return (
@@ -26,7 +27,13 @@ class AddProductPage extends React.Component {
   }
         
     handleAddProduct(event){
-    this.props.dispatch(actionAddProduct({name: this.state.name, price: this.state.price, image: ""}))
+        console.log("när man klickar", this.state.price);
+    this.props.dispatch(
+        actionAddProduct({
+            name: this.state.name, 
+            price: this.state.price, 
+            image: this.state.image })
+    );
   }
         
     handleChangeName(event){
