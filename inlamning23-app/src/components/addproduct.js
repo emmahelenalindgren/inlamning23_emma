@@ -22,7 +22,7 @@ class AddProductPage extends Component {
           <input type="text" placeholder="Name" onChange={this.handleChangeName} value={this.state.name} />
           <input type="text" placeholder="Price" onChange={this.handleChangePrice} value={this.state.price}/>
           <input type="text" placeholder="Imageurl" onChange={this.handleChangeImage} value={this.state.image}/>
-          <button onClick={this.handleAddProduct}>Add product</button>
+          <br /><button onClick={this.handleAddProduct}>Add product</button>
         </div> )
   }
         

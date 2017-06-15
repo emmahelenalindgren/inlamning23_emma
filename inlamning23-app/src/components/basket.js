@@ -21,7 +21,7 @@ import {connect} from 'react-redux';
             <ul>
                 {productList}
             </ul>
-            <div>Antal varor i kundvagnen: {productList.length}<p>Totalt pris: {sum}</p>
+            <div>Antal varor i kundvagnen: {productList.length}<p>Totalt pris: {sum}kr</p>
             </div>
         </div>
         

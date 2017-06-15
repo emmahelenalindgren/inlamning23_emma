@@ -13,21 +13,21 @@ let initialState = {
 	tab: 1,  // 1=väder, 2=tal
 	imageUrl: 'http://www.gexing.me/uploads/allimg/141016/23040SH4-0.jpg',
 	numbers: [2, 4, 8, 16, 32, 64],
-    history: [{type: "test"}],
+    history: [],
     products: [
         {
-            name: "katt",
-            image: "http://veterinaren.nu/uploads/images/users/thumbs/54cb8c2ae7754.png",
+            name: "Katt",
+            image: "https://uploads.scratch.mit.edu/users/avatars/1385/1878.png",
             price: 49
         },
         {
             name: "Hund",
-            image: "https://lh6.googleusercontent.com/-TypA1_RPKUc/AAAAAAAAAAI/AAAAAAAAAEs/prA_5TO5iEc/photo.jpg?sz=50",
+            image: "https://pbs.twimg.com/profile_images/670332049522298880/N5uJZueS.jpg",
             price: 349
         },
         {
-            name: "kanin",
-            image: "https://pbs.twimg.com/profile_images/867133348141027328/OzKePdT3_normal.jpg",
+            name: "Anka",
+            image: "https://yt3.ggpht.com/-liIoCo18ZuU/AAAAAAAAAAI/AAAAAAAAAAA/WDwQi24eMH4/s48-c-k-no-mo-rj-c0xffffff/photo.jpg",
             price: 649
         }
     ],

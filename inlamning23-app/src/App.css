@@ -1,7 +1,41 @@
+body{
+ font-family: sans-serif;
+}
 .tabbody {
-	width: 300px; height: auto; border: 1px solid black;
+	width: 290px; height: auto; border: 1px solid black;
+    padding: 30px;
 }
 
 .App {
 	padding: 20px;
+}
+
+button {
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    border: 1px solid white;
+}
+
+
+ul{
+    list-style-type: none;
+    margin: 0;
+}
+
+li {
+    margin-left: 0;
+    background-color: lightblue;
+    margin: 10px;
+    padding: 10px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+}
+
+img {
+    height: 40px;
 }
