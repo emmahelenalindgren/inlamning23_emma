@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import {actionRemoveFromBasket, actionHistory} from "../actions/actions.js";
+import {connect} from 'react-redux';
 
 
  class Basket extends Component {
@@ -35,4 +36,4 @@ import {actionRemoveFromBasket, actionHistory} from "../actions/actions.js";
 }
 
 
-export default Basket;
+export default connect()(Basket);
